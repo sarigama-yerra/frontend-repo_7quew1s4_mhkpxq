@@ -1,71 +1,79 @@
+import NeonNavbar from './components/NeonNavbar'
+import NeonHero from './components/NeonHero'
+import NeonMarquee from './components/NeonMarquee'
+import NeonShowcase from './components/NeonShowcase'
+import NeonFooter from './components/NeonFooter'
+
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+    <div className="min-h-screen bg-black text-white">
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute inset-0 bg-[radial-gradient(1200px_600px_at_20%_10%,rgba(244,114,182,0.08),transparent_60%)]"/>
+        <div className="absolute inset-0 bg-[radial-gradient(1000px_500px_at_80%_20%,rgba(34,211,238,0.08),transparent_60%)]"/>
+        <div className="absolute inset-0 bg-[radial-gradient(900px_450px_at_50%_90%,rgba(147,51,234,0.10),transparent_60%)]"/>
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black"/>
+      </div>
 
-      <div className="relative min-h-screen flex items-center justify-center p-8">
-        <div className="max-w-2xl w-full">
-          {/* Header with Flames icon */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center mb-6">
-              <img
-                src="/flame-icon.svg"
-                alt="Flames"
-                className="w-24 h-24 drop-shadow-[0_0_25px_rgba(59,130,246,0.5)]"
-              />
-            </div>
+      <NeonNavbar />
+      <NeonHero />
+      <NeonMarquee />
+      <NeonShowcase />
 
-            <h1 className="text-5xl font-bold text-white mb-4 tracking-tight">
-              Flames Blue
-            </h1>
-
-            <p className="text-xl text-blue-200 mb-6">
-              Build applications through conversation
-            </p>
+      {/* Story section */}
+      <section id="story" className="relative py-24">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-violet-500/40 to-transparent"/>
+        </div>
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 grid lg:grid-cols-2 gap-10">
+          <div>
+            <h2 className="text-4xl sm:text-6xl font-extrabold mb-6">Our Neon Origin</h2>
+            <p className="text-cyan-100/85 text-lg">We started in a micro-lab where color meets crunch. Our mission: snack experiences that feel like main stage visuals. Each kernel passes through an ionized flavor tunnel, emerging with a glow and a grin.</p>
+            <p className="mt-4 text-cyan-100/80">We don’t just pop; we orchestrate detonations synchronized to synth arpeggios. Sustainability matters too—our glow is food-safe, plant-derived, and party-approved.</p>
           </div>
-
-          {/* Instructions */}
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 shadow-xl mb-6">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                1
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Describe your idea</h3>
-                <p className="text-blue-200/80 text-sm">Use the chat panel on the left to tell the AI what you want to build</p>
-              </div>
+          <div className="relative">
+            <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-fuchsia-500/20 via-violet-500/20 to-cyan-500/20 blur-2xl"/>
+            <div className="relative rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8">
+              <ul className="space-y-4 text-cyan-100/80">
+                <li>• UV-reactive glazes for that dancefloor glow</li>
+                <li>• Small-batch, locally sourced kernels</li>
+                <li>• Recyclable neon pouches with reseal tech</li>
+                <li>• Flavor engineering with real ingredients</li>
+              </ul>
             </div>
-
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                2
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Watch it build</h3>
-                <p className="text-blue-200/80 text-sm">Your app will appear in this preview as the AI generates the code</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                3
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Refine and iterate</h3>
-                <p className="text-blue-200/80 text-sm">Continue the conversation to add features and make changes</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Footer */}
-          <div className="text-center">
-            <p className="text-sm text-blue-300/60">
-              No coding required • Just describe what you want
-            </p>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Shop teaser */}
+      <section id="shop" className="relative py-24">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 text-center">
+          <h2 className="text-4xl sm:text-6xl font-extrabold mb-6">Glow Shop</h2>
+          <p className="text-cyan-100/85 max-w-2xl mx-auto">Grab limited drops, flavor bundles, and accessories that light up your night.</p>
+          <div className="mt-10 inline-flex rounded-full overflow-hidden border border-white/10">
+            <a href="#" className="px-6 py-3 bg-white/5 text-white/90 hover:text-white">View All</a>
+            <a href="#" className="px-6 py-3 bg-gradient-to-r from-fuchsia-600 to-cyan-600">Limited Drop</a>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="relative py-24">
+        <div className="max-w-4xl mx-auto px-6 sm:px-8">
+          <div className="relative rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8">
+            <h3 className="text-3xl font-bold mb-4">Beam Us A Message</h3>
+            <form className="grid sm:grid-cols-2 gap-4">
+              <input className="px-4 py-3 rounded-xl bg-black/40 border border-white/10 focus:outline-none focus:ring-2 focus:ring-fuchsia-500/40" placeholder="Name" />
+              <input className="px-4 py-3 rounded-xl bg-black/40 border border-white/10 focus:outline-none focus:ring-2 focus:ring-cyan-500/40" placeholder="Email" />
+              <textarea className="sm:col-span-2 px-4 py-3 rounded-xl bg-black/40 border border-white/10 focus:outline-none focus:ring-2 focus:ring-violet-500/40" rows={4} placeholder="Your message" />
+              <div className="sm:col-span-2">
+                <button className="relative inline-flex items-center px-6 py-3 rounded-full text-white bg-gradient-to-r from-fuchsia-600 via-violet-600 to-cyan-600 shadow-[0_0_30px_rgba(168,85,247,0.45)]">Send Transmission</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <NeonFooter />
     </div>
   )
 }
